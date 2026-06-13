@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciclos en Java</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Mermaid -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h1>Tutorial de Programación</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="metodos.html">Siguiente Tema →</a></li>
+        </ul>
+    </nav>
+
+    <button id="darkModeBtn">🌙</button>
+
+</header>
+
+<section class="hero">
+    <h2>Ciclos (Bucles) en Java</h2>
+
+    <p>
+        Los ciclos permiten repetir instrucciones varias veces
+        sin necesidad de escribir el mismo código repetidamente.
+    </p>
+</section>
+
+<!-- INTRODUCCION -->
+
+<section class="about">
+
+    <h2>Introducción</h2>
+
+    <p>
+        Imagina que necesitas mostrar los números del 1 al 100.
+        Sería muy tedioso escribir 100 instrucciones.
+        Los ciclos permiten automatizar tareas repetitivas.
+    </p>
+
+</section>
+
+<!-- TEORIA -->
+
+<section class="about">
+
+    <h2>Conceptos Teóricos</h2>
+
+    <h3>¿Qué es un ciclo?</h3>
+
+    <p>
+        Un ciclo es una estructura de control que repite
+        instrucciones mientras se cumpla una condición.
+    </p>
+
+    <h3>Tipos de ciclos en Java</h3>
+
+    <ul>
+        <li>for</li>
+        <li>while</li>
+        <li>do-while</li>
+    </ul>
+
+</section>
+
+<!-- FOR -->
+
+<section class="about">
+
+    <h2>Ciclo For</h2>
+
+    <p>
+        Se utiliza cuando sabemos cuántas veces se repetirá una acción.
+    </p>
+
+<pre>
+for(inicialización; condición; incremento){
+    instrucciones;
+}
+</pre>
+
+<h3>Ejemplo</h3>
+
+<pre>
+for(int i = 1; i <= 5; i++){
+
+    System.out.println(i);
+
+}
+</pre>
+
+<p>Salida:</p>
+
+<pre>
+1
+2
+3
+4
+5
+</pre>
+
+<h3>Explicación</h3>
+
+<ul>
+    <li>i inicia en 1</li>
+    <li>Se ejecuta mientras i sea menor o igual a 5</li>
+    <li>i aumenta de uno en uno</li>
+</ul>
+
+</section>
+
+<!-- DIAGRAMA FOR -->
+
+<section class="about">
+
+<h2>Diagrama de Flujo del For</h2>
+
+<div class="mermaid">
+
+flowchart TD
+
+A[Inicio]
+--> B[i = 1]
+
+B --> C{ i <= 5 ? }
+
+C -->|Sí| D[Mostrar i]
+
+D --> E[i++]
+
+E --> C
+
+C -->|No| F[Fin]
+
+</div>
+
+</section>
+
+<!-- WHILE -->
+
+<section class="about">
+
+<h2>Ciclo While</h2>
+
+<p>
+Se utiliza cuando no conocemos exactamente
+cuántas repeticiones habrá.
+</p>
+
+<pre>
+while(condición){
+
+    instrucciones;
+
+}
+</pre>
+
+<h3>Ejemplo</h3>
+
+<pre>
+int i = 1;
+
+while(i <= 5){
+
+    System.out.println(i);
+
+    i++;
+
+}
+</pre>
+
+</section>
+
+<!-- DIAGRAMA WHILE -->
+
+<section class="about">
+
+<h2>Diagrama While</h2>
+
+<div class="mermaid">
+
+flowchart TD
+
+A[Inicio]
+--> B[i=1]
+
+B --> C{ i <=5 ? }
+
+C -->|Sí| D[Mostrar i]
+
+D --> E[i++]
+
+E --> C
+
+C -->|No| F[Fin]
+
+</div>
+
+</section>
+
+<!-- DO WHILE -->
+
+<section class="about">
+
+<h2>Ciclo Do While</h2>
+
+<p>
+La diferencia es que siempre se ejecuta
+al menos una vez.
+</p>
+
+<pre>
+do{
+
+    instrucciones;
+
+}while(condición);
+</pre>
+
+<h3>Ejemplo</h3>
+
+<pre>
+int i = 1;
+
+do{
+
+    System.out.println(i);
+
+    i++;
+
+}while(i <= 5);
+</pre>
+
+</section>
+
+<!-- DIAGRAMA DO WHILE -->
+
+<section class="about">
+
+<h2>Diagrama Do While</h2>
+
+<div class="mermaid">
+
+flowchart TD
+
+A[Inicio]
+--> B[Mostrar i]
+
+B --> C[i++]
+
+C --> D{ i <=5 ? }
+
+D -->|Sí| B
+
+D -->|No| E[Fin]
+
+</div>
+
+</section>
+
+<!-- EJEMPLO BASICO -->
+
+<section class="about">
+
+<h2>Ejemplo Básico Comentado</h2>
+
+<pre>
+public class EjemploFor {
+
+    public static void main(String[] args) {
+
+        // Repetir 10 veces
+
+        for(int i = 1; i <= 10; i++) {
+
+            System.out.println(i);
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<!-- EJEMPLO PRACTICO -->
+
+<section class="about">
+
+<h2>Ejemplo Práctico</h2>
+
+<h3>Tabla de multiplicar del 7</h3>
+
+<pre>
+public class Tabla {
+
+    public static void main(String[] args) {
+
+        for(int i = 1; i <= 10; i++){
+
+            System.out.println(
+                "7 x " + i +
+                " = " + (7*i)
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<!-- EJERCICIOS -->
+
+<section class="about">
+
+<h2>Ejercicios Propuestos</h2>
+
+<ol>
+
+<li>
+Mostrar los números del 1 al 20 usando for.
+</li>
+
+<li>
+Mostrar los números pares del 2 al 100.
+</li>
+
+<li>
+Calcular la suma de los números del 1 al 50.
+</li>
+
+<li>
+Mostrar una tabla de multiplicar ingresada por el usuario.
+</li>
+
+<li>
+Contar cuántos números son múltiplos de 3 entre 1 y 100.
+</li>
+
+</ol>
+
+</section>
+
+<!-- SOLUCIONES -->
+
+<section class="about">
+
+<h2>Soluciones</h2>
+
+<h3>Ejercicio 1</h3>
+
+<pre>
+for(int i=1; i<=20; i++){
+
+    System.out.println(i);
+
+}
+</pre>
+
+<h3>Ejercicio 2</h3>
+
+<pre>
+for(int i=2; i<=100; i+=2){
+
+    System.out.println(i);
+
+}
+</pre>
+
+<h3>Ejercicio 3</h3>
+
+<pre>
+int suma = 0;
+
+for(int i=1; i<=50; i++){
+
+    suma += i;
+
+}
+
+System.out.println(suma);
+</pre>
+
+<h3>Ejercicio 4</h3>
+
+<pre>
+Scanner sc = new Scanner(System.in);
+
+int tabla = sc.nextInt();
+
+for(int i=1; i<=10; i++){
+
+    System.out.println(
+        tabla + " x " + i +
+        " = " + (tabla*i)
+    );
+
+}
+</pre>
+
+<h3>Ejercicio 5</h3>
+
+<pre>
+int contador = 0;
+
+for(int i=1; i<=100; i++){
+
+    if(i % 3 == 0){
+
+        contador++;
+
+    }
+
+}
+
+System.out.println(contador);
+</pre>
+
+</section>
+
+<!-- REPOSITORIO -->
+
+<section class="github">
+
+<h2>Código Fuente</h2>
+
+<p>
+Los ejercicios estarán disponibles en:
+</p>
+
+<a href="#">
+Repositorio GitHub
+</a>
+
+</section>
+
+<!-- RESUMEN -->
+
+<section class="about">
+
+<h2>Resumen</h2>
+
+<ul>
+
+<li>for se usa cuando conocemos las repeticiones.</li>
+
+<li>while depende de una condición.</li>
+
+<li>do-while se ejecuta al menos una vez.</li>
+
+<li>Los ciclos evitan repetir código.</li>
+
+<li>Son fundamentales en programación.</li>
+
+</ul>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Tutorial de Programación
+</p>
+
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Listas en Java - ArrayList</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h1>Tutorial de Programación</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="vectores.html">← Vectores</a></li>
+            <li><a href="archivos.html">Archivos →</a></li>
+        </ul>
+    </nav>
+
+    <button id="darkModeBtn">🌙</button>
+
+</header>
+
+<section class="hero">
+
+    <h2>Listas (ArrayList) en Java</h2>
+
+    <p>
+        Aprende a trabajar con colecciones dinámicas
+        utilizando ArrayList.
+    </p>
+
+</section>
+
+<section class="about">
+
+    <h2>Introducción</h2>
+
+    <p>
+        Los arreglos tienen un tamaño fijo. En muchos casos
+        necesitamos agregar o eliminar elementos mientras
+        el programa está en ejecución.
+    </p>
+
+    <p>
+        Para resolver este problema Java ofrece la clase
+        ArrayList.
+    </p>
+
+</section>
+
+<section class="about">
+
+    <h2>¿Qué es un ArrayList?</h2>
+
+    <p>
+        Un ArrayList es una estructura dinámica que permite
+        almacenar múltiples elementos y modificar su tamaño
+        automáticamente.
+    </p>
+
+<pre>
+import java.util.ArrayList;
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ventajas frente a los Arreglos</h2>
+
+    <table border="1">
+
+        <tr>
+            <th>Arreglo</th>
+            <th>ArrayList</th>
+        </tr>
+
+        <tr>
+            <td>Tamaño fijo</td>
+            <td>Tamaño dinámico</td>
+        </tr>
+
+        <tr>
+            <td>Menos flexible</td>
+            <td>Más flexible</td>
+        </tr>
+
+        <tr>
+            <td>Difícil insertar elementos</td>
+            <td>Inserción sencilla</td>
+        </tr>
+
+        <tr>
+            <td>Difícil eliminar elementos</td>
+            <td>Eliminación sencilla</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<section class="about">
+
+    <h2>Crear una Lista</h2>
+
+<pre>
+import java.util.ArrayList;
+
+ArrayList<String> nombres =
+new ArrayList<>();
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Agregar Elementos</h2>
+
+<pre>
+nombres.add("Ana");
+
+nombres.add("Carlos");
+
+nombres.add("Luis");
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Mostrar Elementos</h2>
+
+<pre>
+System.out.println(nombres);
+</pre>
+
+<p>Salida:</p>
+
+<pre>
+[Ana, Carlos, Luis]
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Obtener un Elemento</h2>
+
+<pre>
+System.out.println(
+    nombres.get(1)
+);
+</pre>
+
+<p>Salida:</p>
+
+<pre>
+Carlos
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Modificar un Elemento</h2>
+
+<pre>
+nombres.set(
+    1,
+    "Pedro"
+);
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Eliminar un Elemento</h2>
+
+<pre>
+nombres.remove(0);
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Tamaño de la Lista</h2>
+
+<pre>
+System.out.println(
+    nombres.size()
+);
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Recorrer una Lista</h2>
+
+<pre>
+for(String nombre : nombres){
+
+    System.out.println(
+        nombre
+    );
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Búsqueda de Elementos</h2>
+
+<pre>
+if(
+    nombres.contains("Luis")
+){
+
+    System.out.println(
+        "Existe"
+    );
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejemplo Básico Comentado</h2>
+
+<pre>
+import java.util.ArrayList;
+
+public class ListaBasica {
+
+    public static void main(String[] args){
+
+        ArrayList<String> ciudades =
+        new ArrayList<>();
+
+        ciudades.add("Ambato");
+        ciudades.add("Quito");
+        ciudades.add("Cuenca");
+
+        for(String ciudad :
+            ciudades){
+
+            System.out.println(
+                ciudad
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejemplo Práctico</h2>
+
+    <h3>Lista de Estudiantes</h3>
+
+<pre>
+import java.util.ArrayList;
+
+public class Estudiantes {
+
+    public static void main(String[] args){
+
+        ArrayList<String>
+        estudiantes =
+        new ArrayList<>();
+
+        estudiantes.add("Juan");
+        estudiantes.add("María");
+        estudiantes.add("Pedro");
+
+        System.out.println(
+            estudiantes
+        );
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejercicios Propuestos</h2>
+
+<ol>
+
+<li>
+Crear una lista de 5 nombres.
+</li>
+
+<li>
+Mostrar todos los nombres almacenados.
+</li>
+
+<li>
+Eliminar un nombre de la lista.
+</li>
+
+<li>
+Buscar un nombre utilizando contains().
+</li>
+
+<li>
+Contar cuántos elementos tiene la lista.
+</li>
+
+<li>
+Crear una lista de números enteros y calcular su suma.
+</li>
+
+<li>
+Mostrar únicamente los números pares de una lista.
+</li>
+
+</ol>
+
+</section>
+
+<section class="about">
+
+    <h2>Soluciones</h2>
+
+<h3>Ejercicio 1</h3>
+
+<pre>
+ArrayList<String> nombres =
+new ArrayList<>();
+
+nombres.add("Ana");
+nombres.add("Luis");
+nombres.add("Pedro");
+nombres.add("Sofía");
+nombres.add("Carlos");
+</pre>
+
+<h3>Ejercicio 2</h3>
+
+<pre>
+for(String nombre :
+    nombres){
+
+    System.out.println(
+        nombre
+    );
+
+}
+</pre>
+
+<h3>Ejercicio 3</h3>
+
+<pre>
+nombres.remove("Luis");
+</pre>
+
+<h3>Ejercicio 4</h3>
+
+<pre>
+if(
+    nombres.contains("Pedro")
+){
+
+    System.out.println(
+        "Encontrado"
+    );
+
+}
+</pre>
+
+<h3>Ejercicio 5</h3>
+
+<pre>
+System.out.println(
+    nombres.size()
+);
+</pre>
+
+<h3>Ejercicio 6</h3>
+
+<pre>
+ArrayList<Integer> numeros =
+new ArrayList<>();
+
+numeros.add(10);
+numeros.add(20);
+numeros.add(30);
+
+int suma = 0;
+
+for(Integer n :
+    numeros){
+
+    suma += n;
+
+}
+
+System.out.println(suma);
+</pre>
+
+<h3>Ejercicio 7</h3>
+
+<pre>
+for(Integer n :
+    numeros){
+
+    if(n % 2 == 0){
+
+        System.out.println(n);
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="github">
+
+    <h2>Código Fuente</h2>
+
+    <p>
+        Todos los ejemplos se encuentran en:
+    </p>
+
+<pre>
+ejercicios/listas/
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Resumen</h2>
+
+    <ul>
+
+        <li>ArrayList es una colección dinámica.</li>
+
+        <li>Permite agregar y eliminar elementos fácilmente.</li>
+
+        <li>Su tamaño cambia automáticamente.</li>
+
+        <li>Ofrece métodos como add, remove, get y contains.</li>
+
+        <li>Es una de las estructuras más utilizadas en Java.</li>
+
+    </ul>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Tutorial de Programación para Principiantes
+    </p>
+
+
+<section class="github">
+<h2>Código Fuente en GitHub</h2>
+<p>Reemplaza TU_USUARIO por tu usuario de GitHub.</p>
+<a href="https://github.com/TU_USUARIO/tutorial-programacion/tree/main/ejercicios/listas" target="_blank">
+Ver ejercicios del tema
+</a>
+</section>
+
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

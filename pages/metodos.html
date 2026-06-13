@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Métodos en Java</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <h1>Tutorial de Programación</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="ciclos.html">← Ciclos</a></li>
+            <li><a href="vectores.html">Vectores →</a></li>
+        </ul>
+    </nav>
+
+    <button id="darkModeBtn">🌙</button>
+
+</header>
+
+<section class="hero">
+
+    <h2>Métodos (Funciones) en Java</h2>
+
+    <p>
+        Aprende a crear, reutilizar y organizar código
+        mediante métodos.
+    </p>
+
+</section>
+
+<section class="about">
+
+    <h2>Introducción</h2>
+
+    <p>
+        Un método es un bloque de código que realiza una tarea
+        específica. Gracias a los métodos podemos reutilizar
+        instrucciones sin escribirlas varias veces.
+    </p>
+
+    <p>
+        Los métodos permiten que nuestros programas sean más
+        organizados, fáciles de entender y mantener.
+    </p>
+
+</section>
+
+<section class="about">
+
+    <h2>¿Qué es un método?</h2>
+
+    <p>
+        Un método es una agrupación de instrucciones que puede
+        ejecutarse cuando sea necesario.
+    </p>
+
+<pre>
+public static void nombreMetodo(){
+
+    instrucciones;
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ventajas de los Métodos</h2>
+
+    <ul>
+
+        <li>Evitan repetir código.</li>
+
+        <li>Facilitan el mantenimiento.</li>
+
+        <li>Permiten dividir problemas grandes.</li>
+
+        <li>Mejoran la legibilidad.</li>
+
+        <li>Favorecen la reutilización.</li>
+
+    </ul>
+
+</section>
+
+<section class="about">
+
+    <h2>Método Sin Parámetros</h2>
+
+    <p>
+        Son métodos que ejecutan una tarea sin recibir datos.
+    </p>
+
+<pre>
+public class Ejemplo {
+
+    public static void saludo(){
+
+        System.out.println("Hola Mundo");
+
+    }
+
+    public static void main(String[] args){
+
+        saludo();
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Métodos con Parámetros</h2>
+
+    <p>
+        Los parámetros permiten enviar información al método.
+    </p>
+
+<pre>
+public class Ejemplo {
+
+    public static void saludar(String nombre){
+
+        System.out.println(
+            "Hola " + nombre
+        );
+
+    }
+
+    public static void main(String[] args){
+
+        saludar("Christopher");
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Métodos con Retorno</h2>
+
+    <p>
+        Un método puede devolver un resultado usando la palabra
+        reservada return.
+    </p>
+
+<pre>
+public class Ejemplo {
+
+    public static int sumar(
+        int a,
+        int b
+    ){
+
+        return a + b;
+
+    }
+
+    public static void main(String[] args){
+
+        int resultado =
+        sumar(5,3);
+
+        System.out.println(resultado);
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Explicación Paso a Paso</h2>
+
+    <ol>
+
+        <li>Se crea el método sumar.</li>
+
+        <li>Recibe dos números.</li>
+
+        <li>Realiza la suma.</li>
+
+        <li>Devuelve el resultado.</li>
+
+        <li>El método main utiliza el resultado.</li>
+
+    </ol>
+
+</section>
+
+<section class="about">
+
+    <h2>Sobrecarga de Métodos</h2>
+
+    <p>
+        Java permite crear varios métodos con el mismo nombre
+        siempre que tengan parámetros diferentes.
+    </p>
+
+<pre>
+public class Ejemplo {
+
+    public static int sumar(
+        int a,
+        int b
+    ){
+
+        return a + b;
+
+    }
+
+    public static double sumar(
+        double a,
+        double b
+    ){
+
+        return a + b;
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejemplo Básico Comentado</h2>
+
+<pre>
+public class Cuadrado {
+
+    public static int elevarCuadrado(
+        int numero
+    ){
+
+        return numero * numero;
+
+    }
+
+    public static void main(String[] args){
+
+        int resultado =
+        elevarCuadrado(5);
+
+        System.out.println(
+            resultado
+        );
+
+    }
+
+}
+</pre>
+
+<p>
+Este método recibe un número y devuelve su cuadrado.
+</p>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejemplo Práctico</h2>
+
+    <h3>Calcular el IVA</h3>
+
+<pre>
+public class IVA {
+
+    public static double calcularIVA(
+        double precio
+    ){
+
+        return precio * 0.15;
+
+    }
+
+    public static void main(String[] args){
+
+        double iva =
+        calcularIVA(100);
+
+        System.out.println(
+            "IVA: " + iva
+        );
+
+    }
+
+}
+</pre>
+
+<p>
+Este método permite reutilizar el cálculo del IVA para
+cualquier producto.
+</p>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejercicios Propuestos</h2>
+
+    <ol>
+
+        <li>
+            Crear un método que muestre tu nombre.
+        </li>
+
+        <li>
+            Crear un método que reciba dos números y
+            muestre su suma.
+        </li>
+
+        <li>
+            Crear un método que calcule el área de un
+            rectángulo.
+        </li>
+
+        <li>
+            Crear un método que determine si un número
+            es par o impar.
+        </li>
+
+        <li>
+            Crear un método que reciba una edad y
+            devuelva si es mayor de edad.
+        </li>
+
+    </ol>
+
+</section>
+
+<section class="about">
+
+    <h2>Soluciones</h2>
+
+    <h3>Ejercicio 1</h3>
+
+<pre>
+public static void mostrarNombre(){
+
+    System.out.println(
+        "Christopher"
+    );
+
+}
+</pre>
+
+    <h3>Ejercicio 2</h3>
+
+<pre>
+public static void sumar(
+    int a,
+    int b
+){
+
+    System.out.println(a+b);
+
+}
+</pre>
+
+    <h3>Ejercicio 3</h3>
+
+<pre>
+public static double areaRectangulo(
+    double base,
+    double altura
+){
+
+    return base * altura;
+
+}
+</pre>
+
+    <h3>Ejercicio 4</h3>
+
+<pre>
+public static boolean esPar(
+    int numero
+){
+
+    return numero % 2 == 0;
+
+}
+</pre>
+
+    <h3>Ejercicio 5</h3>
+
+<pre>
+public static boolean mayorEdad(
+    int edad
+){
+
+    return edad >= 18;
+
+}
+</pre>
+
+</section>
+
+<section class="github">
+
+    <h2>Código Fuente</h2>
+
+    <p>
+        Todos los ejemplos se encuentran dentro de la carpeta:
+    </p>
+
+<pre>
+ejercicios/metodos/
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Resumen</h2>
+
+    <ul>
+
+        <li>Los métodos permiten reutilizar código.</li>
+
+        <li>Pueden recibir parámetros.</li>
+
+        <li>Pueden devolver valores.</li>
+
+        <li>Ayudan a organizar programas grandes.</li>
+
+        <li>La sobrecarga permite usar el mismo nombre para tareas similares.</li>
+
+    </ul>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Tutorial de Programación para Principiantes
+    </p>
+
+
+<section class="github">
+<h2>Código Fuente en GitHub</h2>
+<p>Reemplaza TU_USUARIO por tu usuario de GitHub.</p>
+<a href="https://github.com/TU_USUARIO/tutorial-programacion/tree/main/ejercicios/metodos" target="_blank">
+Ver ejercicios del tema
+</a>
+</section>
+
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

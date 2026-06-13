@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manejo de Archivos en Java</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        <h1>Tutorial de Programación</h1>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="listas.html">← Listas</a></li>
+        </ul>
+    </nav>
+
+    <button id="darkModeBtn">🌙</button>
+
+</header>
+
+<section class="hero">
+
+    <h2>Manejo de Archivos en Java</h2>
+
+    <p>
+        Aprende a leer y escribir archivos TXT y CSV,
+        una habilidad esencial para almacenar información.
+    </p>
+
+</section>
+
+<section class="about">
+
+    <h2>Introducción</h2>
+
+    <p>
+        Los archivos permiten guardar información de manera
+        permanente, incluso después de cerrar un programa.
+    </p>
+
+    <p>
+        Son ampliamente utilizados para almacenar usuarios,
+        configuraciones, reportes, estadísticas y bases de datos simples.
+    </p>
+
+</section>
+
+<section class="about">
+
+    <h2>Tipos de Archivos Más Utilizados</h2>
+
+    <ul>
+
+        <li>TXT (Texto plano)</li>
+
+        <li>CSV (Valores separados por comas)</li>
+
+        <li>JSON</li>
+
+        <li>XML</li>
+
+        <li>PDF</li>
+
+    </ul>
+
+</section>
+
+<section class="about">
+
+    <h2>Escribir un Archivo TXT</h2>
+
+<pre>
+import java.io.FileWriter;
+
+public class EscribirTXT {
+
+    public static void main(String[] args) {
+
+        try {
+
+            FileWriter archivo =
+            new FileWriter("ejemplo.txt");
+
+            archivo.write(
+                "Hola Mundo"
+            );
+
+            archivo.close();
+
+            System.out.println(
+                "Archivo creado"
+            );
+
+        } catch(Exception e){
+
+            System.out.println(
+                e.getMessage()
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Leer un Archivo TXT</h2>
+
+<pre>
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class LeerTXT {
+
+    public static void main(String[] args) {
+
+        try {
+
+            BufferedReader lector =
+            new BufferedReader(
+                new FileReader(
+                    "ejemplo.txt"
+                )
+            );
+
+            String linea;
+
+            while(
+                (linea =
+                lector.readLine())
+                != null
+            ){
+
+                System.out.println(
+                    linea
+                );
+
+            }
+
+            lector.close();
+
+        } catch(Exception e){
+
+            System.out.println(
+                e.getMessage()
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>¿Qué es un Archivo CSV?</h2>
+
+    <p>
+        CSV significa Comma Separated Values
+        (Valores Separados por Comas).
+    </p>
+
+<pre>
+id,nombre,edad
+
+1,Ana,20
+
+2,Luis,22
+
+3,Pedro,18
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Escribir un Archivo CSV</h2>
+
+<pre>
+import java.io.FileWriter;
+
+public class ExportarCSV {
+
+    public static void main(String[] args) {
+
+        try {
+
+            FileWriter archivo =
+            new FileWriter(
+                "usuarios.csv"
+            );
+
+            archivo.write(
+                "id,nombre,edad\n"
+            );
+
+            archivo.write(
+                "1,Ana,20\n"
+            );
+
+            archivo.write(
+                "2,Luis,22\n"
+            );
+
+            archivo.close();
+
+        } catch(Exception e){
+
+            System.out.println(
+                e.getMessage()
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Leer un Archivo CSV</h2>
+
+<pre>
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class LeerCSV {
+
+    public static void main(String[] args) {
+
+        try {
+
+            BufferedReader lector =
+            new BufferedReader(
+                new FileReader(
+                    "usuarios.csv"
+                )
+            );
+
+            String linea;
+
+            while(
+                (linea =
+                lector.readLine())
+                != null
+            ){
+
+                String[] datos =
+                linea.split(",");
+
+                for(String dato :
+                    datos){
+
+                    System.out.print(
+                        dato + " "
+                    );
+
+                }
+
+                System.out.println();
+
+            }
+
+            lector.close();
+
+        } catch(Exception e){
+
+            System.out.println(
+                e.getMessage()
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejemplo Práctico</h2>
+
+    <h3>Guardar Calificaciones</h3>
+
+<pre>
+import java.io.FileWriter;
+
+public class Notas {
+
+    public static void main(String[] args) {
+
+        try {
+
+            FileWriter archivo =
+            new FileWriter(
+                "notas.txt"
+            );
+
+            archivo.write(
+                "Juan: 9.5\n"
+            );
+
+            archivo.write(
+                "Ana: 8.7\n"
+            );
+
+            archivo.write(
+                "Pedro: 10\n"
+            );
+
+            archivo.close();
+
+        } catch(Exception e){
+
+            System.out.println(
+                e.getMessage()
+            );
+
+        }
+
+    }
+
+}
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Buenas Prácticas</h2>
+
+    <ul>
+
+        <li>Siempre cerrar los archivos.</li>
+
+        <li>Usar try-catch para controlar errores.</li>
+
+        <li>Validar que el archivo exista.</li>
+
+        <li>Utilizar rutas organizadas.</li>
+
+        <li>No sobrescribir información importante accidentalmente.</li>
+
+    </ul>
+
+</section>
+
+<section class="about">
+
+    <h2>Ejercicios Propuestos</h2>
+
+<ol>
+
+<li>
+Crear un archivo TXT con tu nombre.
+</li>
+
+<li>
+Leer el archivo anterior.
+</li>
+
+<li>
+Crear un archivo CSV con 5 estudiantes.
+</li>
+
+<li>
+Leer el CSV y mostrar los datos.
+</li>
+
+<li>
+Guardar una lista de productos en un TXT.
+</li>
+
+<li>
+Guardar las notas de un curso en CSV.
+</li>
+
+<li>
+Crear una carpeta y exportar archivos dentro de ella.
+</li>
+
+</ol>
+
+</section>
+
+<section class="about">
+
+    <h2>Soluciones</h2>
+
+    <h3>Ejercicio 1</h3>
+
+<pre>
+FileWriter archivo =
+new FileWriter("nombre.txt");
+
+archivo.write(
+    "Christopher"
+);
+
+archivo.close();
+</pre>
+
+<h3>Ejercicio 2</h3>
+
+<pre>
+BufferedReader lector =
+new BufferedReader(
+new FileReader(
+"nombre.txt"
+));
+</pre>
+
+<h3>Ejercicio 3</h3>
+
+<pre>
+archivo.write(
+"id,nombre\n"
+);
+</pre>
+
+<h3>Ejercicio 4</h3>
+
+<pre>
+String[] datos =
+linea.split(",");
+</pre>
+
+<h3>Ejercicio 5</h3>
+
+<pre>
+archivo.write(
+"Laptop\n"
+);
+
+archivo.write(
+"Mouse\n"
+);
+</pre>
+
+<h3>Ejercicio 6</h3>
+
+<pre>
+archivo.write(
+"Juan,9.5\n"
+);
+</pre>
+
+<h3>Ejercicio 7</h3>
+
+<pre>
+String carpeta =
+"Reportes";
+
+new File(carpeta)
+.mkdir();
+</pre>
+
+</section>
+
+<section class="github">
+
+    <h2>Código Fuente</h2>
+
+    <p>
+        Todos los ejemplos se encuentran en:
+    </p>
+
+<pre>
+ejercicios/archivos/
+</pre>
+
+</section>
+
+<section class="about">
+
+    <h2>Resumen</h2>
+
+    <ul>
+
+        <li>TXT almacena texto plano.</li>
+
+        <li>CSV almacena datos tabulares.</li>
+
+        <li>FileWriter permite escribir archivos.</li>
+
+        <li>BufferedReader permite leer archivos.</li>
+
+        <li>Los archivos son fundamentales para guardar información permanentemente.</li>
+
+    </ul>
+
+</section>
+
+<footer>
+
+    <p>
+        © 2026 Tutorial de Programación para Principiantes
+    </p>
+
+
+<section class="github">
+<h2>Código Fuente en GitHub</h2>
+<p>Reemplaza TU_USUARIO por tu usuario de GitHub.</p>
+<a href="https://github.com/TU_USUARIO/tutorial-programacion/tree/main/ejercicios/archivos" target="_blank">
+Ver ejercicios del tema
+</a>
+</section>
+
+</footer>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>
